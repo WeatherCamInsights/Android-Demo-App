@@ -12,7 +12,7 @@ plugins {
 buildscript {
     dependencies {
         classpath(Dependencies.hiltPlugin)
-        classpath("com.android.tools.build:gradle:7.4.2")
+        classpath("com.android.tools.build:gradle:8.1.0")
         classpath("org.jetbrains.dokka:dokka-gradle-plugin:1.7.10")
     }
 }
