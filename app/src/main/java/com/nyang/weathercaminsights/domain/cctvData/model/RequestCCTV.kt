@@ -13,7 +13,7 @@ package com.nyang.weathercaminsights.domain.cctvData.model
  * @param getType 출력 결과 형식(xml, json / 기본: json)
  *
  */
-data class CctvInput(
+data class RequestCCTV(
     val apiKey: String,
     val type: String,
     val cctvType: String,
