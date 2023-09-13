@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id(Plugins.ANDROID_APPLICATION)
     id(Plugins.KOTLIN_ANDROID)
@@ -5,6 +7,8 @@ plugins {
     id(Plugins.KAPT)
     id("com.google.relay") version "0.3.02"
 }
+
+
 
 android {
     namespace = "com.nyang.weathercaminsights"
@@ -16,6 +20,12 @@ android {
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
+
+        buildConfigField(
+            "String",
+            "GET_INFO_CCTV_API_KEY",
+            getApiKey("get_info_cctv_api_key")
+        )
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -42,6 +52,7 @@ android {
     buildFeatures {
         compose = true
         dataBinding = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = Versions.COMPOSE_UI
@@ -68,6 +79,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.media3:media3-exoplayer:1.1.0")
+    implementation("com.android.volley:volley:1.2.1")
     testImplementation(Testing.composeUiTooling)
     testImplementation(Testing.composeUiTestJunit)
     testImplementation(Testing.composeUiTestManifest)
@@ -83,7 +95,7 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended:1.3.1")
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
-    implementation("com.naver.maps:map-sdk:3.17.0")
+    //implementation("com.naver.maps:map-sdk:3.17.0")
 
     // Accompanist
     implementation("com.google.accompanist:accompanist-permissions:0.23.1")
@@ -100,4 +112,9 @@ dependencies {
     implementation(Dependencies.gson)
     implementation(Dependencies.retrofit2)
     implementation(Dependencies.convertGson)
+    implementation("com.squareup.retrofit2:converter-scalars:2.3.0")
+}
+
+fun getApiKey(propertyKey: String): String {
+    return gradleLocalProperties(rootDir).getProperty(propertyKey)
 }

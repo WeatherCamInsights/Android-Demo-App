@@ -1,4 +1,7 @@
-package com.nyang.weathercaminsights.domain.cctvData.model
+package com.nyang.weathercaminsights.domain.model
+
+import com.nyang.weathercaminsights.BuildConfig
+
 
 /**
  * cctv 요청 전문 data input
@@ -13,13 +16,14 @@ package com.nyang.weathercaminsights.domain.cctvData.model
  * @param getType 출력 결과 형식(xml, json / 기본: json)
  *
  */
+
 data class RequestCCTV(
-    val apiKey: String,
-    val type: String,
-    val cctvType: String,
-    val minX: Double,
-    val maxX: Double,
-    val minY: Double,
-    val maxY: Double,
-    val getType: String = "JSON"
+    val apiKey: String = BuildConfig.GET_INFO_CCTV_API_KEY,
+    val type: String = "ex",
+    val cctvType: String = "1",
+    val minX: Double = 127.100000,
+    val maxX: Double = 128.890000,
+    val minY: Double = 34.100000,
+    val maxY: Double = 39.100000,
+    val getType: String = "json"
 )
