@@ -8,7 +8,6 @@ plugins {
     id("org.jetbrains.dokka") version "1.8.20"
 }
 
-
 buildscript {
     dependencies {
         classpath(Dependencies.hiltPlugin)

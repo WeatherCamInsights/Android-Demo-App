@@ -46,4 +46,8 @@ object Dependencies {
     const val roomRuntime = "androidx.room:room-runtime:${Versions.ROOM}"
     const val roomCompiler = "androidx.room:room-compiler:${Versions.ROOM}"
 
+    //map
+    const val naverMap = "com.naver.maps:map-sdk:${Versions.NAVER_MAPS}"
+    const val naverMapCompose =
+        "io.github.fornewid:naver-map-compose:${Versions.NAVER_MAPS_COMPOSE}"
 }

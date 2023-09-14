@@ -1,17 +1,22 @@
 package com.nyang.weathercaminsights.presentation.feature.map
 
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.nyang.weathercaminsights.domain.model.ResponseCCTV
+import com.naver.maps.map.compose.ExperimentalNaverMapApi
+import com.naver.maps.map.compose.NaverMap
 
 @Composable
 fun MapScreen(viewModel: MapViewModel = hiltViewModel()) {
 
-    MapContent(viewModel.responseCCTV.value)
+    MapContent()
 }
 
+@OptIn(ExperimentalNaverMapApi::class)
 @Composable
-fun MapContent(responseCCTV: ResponseCCTV) {
-    Text(text = "${responseCCTV.response?.dataCount}")
+fun MapContent() {
+    NaverMap(
+        modifier = Modifier.fillMaxSize()
+    )
 }

@@ -27,6 +27,12 @@ android {
             getApiKey("get_info_cctv_api_key")
         )
 
+        buildConfigField(
+            "String",
+            "NAVER_MAPS_API_KEY",
+            getApiKey("naver_maps_api_key")
+        )
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -95,7 +101,8 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended:1.3.1")
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
-    //implementation("com.naver.maps:map-sdk:3.17.0")
+    implementation(Dependencies.naverMap)
+    implementation(Dependencies.naverMapCompose)
 
     // Accompanist
     implementation("com.google.accompanist:accompanist-permissions:0.23.1")
