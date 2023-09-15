@@ -96,7 +96,6 @@ dependencies {
     implementation(Dependencies.hiltAndroid)
     kapt(Dependencies.hiltCompiler)
     implementation(Dependencies.hiltNavigationCompose)
-    implementation("androidx.compose.material:material:1.3.1")
     implementation("androidx.compose.animation:animation:1.3.3")
     implementation("androidx.compose.material:material-icons-extended:1.3.1")
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")

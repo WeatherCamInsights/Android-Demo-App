@@ -14,7 +14,7 @@ package com.nyang.weathercaminsights.domain.model
  */
 
 data class RequestCCTV(
-    val type: String = "ex",
+    val type: String = "its",
     val cctvType: String = "1",
     val minX: Double = 127.100000,
     val maxX: Double = 128.890000,

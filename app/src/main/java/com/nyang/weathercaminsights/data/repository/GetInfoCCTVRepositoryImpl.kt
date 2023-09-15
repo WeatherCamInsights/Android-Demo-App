@@ -28,12 +28,11 @@ class GetInfoCCTVRepositoryImpl : GetInfoCCTVRepository {
         when (data.isSuccessful) {
             true -> {
                 result = data.body() ?: ResponseCCTV()
-                Log.d("Ssssss", data.body().toString())
-
+                Log.d("Success", "get info cctv")
             }
 
             else -> {
-                Log.d("Failure", "???")
+                Log.d("Failure", "get info cctv")
             }
         }
         /*.enqueue(object : Callback<ResponseCCTV> {

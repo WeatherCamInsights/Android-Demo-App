@@ -24,10 +24,10 @@ data class InfoCCTV(
     val cctvUrl: String? = "",
     @SerializedName("cctvresolution")
     val cctvResolution: String? = "",
-    @SerializedName("coordX")
-    val coordX: Double? = 0.0,
+    @SerializedName("coordx")
+    val coordX: Double? = null,
     @SerializedName("coordy")
-    val coordY: Double? = 0.0,
+    val coordY: Double? = null,
     @SerializedName("cctvformat")
     val cctvFormat: String? = "",
     @SerializedName("cctvname")
