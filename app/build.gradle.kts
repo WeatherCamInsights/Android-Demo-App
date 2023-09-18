@@ -102,6 +102,7 @@ dependencies {
 
     implementation(Dependencies.naverMap)
     implementation(Dependencies.naverMapCompose)
+    implementation(Dependencies.playServiceLocation)
 
     // Accompanist
     implementation("com.google.accompanist:accompanist-permissions:0.23.1")

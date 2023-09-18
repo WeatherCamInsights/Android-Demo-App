@@ -46,4 +46,5 @@ object Versions {
 
     const val NAVER_MAPS = "3.17.0"
     const val NAVER_MAPS_COMPOSE = "1.3.3"
+    const val PLAY_SERVICE_LOCATION = "16.0.0"
 }

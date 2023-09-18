@@ -25,7 +25,6 @@ fun MapScreen(viewModel: MapViewModel = hiltViewModel()) {
 @OptIn(ExperimentalNaverMapApi::class)
 @Composable
 fun MapContent(responseInfoCCTV: ResponseInfoCCTV) {
-
     Box {
         NaverMap(
             locationSource = rememberFusedLocationSource(),
@@ -37,9 +36,13 @@ fun MapContent(responseInfoCCTV: ResponseInfoCCTV) {
             ),
             modifier = Modifier.fillMaxSize()
         ) {
-            /*for (cctv in responseInfoCCTV.infoCCTVList ?: emptyList()) {
-                MapMarker(cctv.coordY, cctv.coordX, cctv.cctvName ?: "")
-            }*/
+            responseInfoCCTV.infoCCTVList?.mapIndexed { index, cctv ->
+                MapMarker(
+                    cctv.coordY, cctv.coordX,
+                    cctv.cctvName ?: "",
+                    index, true
+                )
+            }
 
         }
 
@@ -50,10 +53,19 @@ fun MapContent(responseInfoCCTV: ResponseInfoCCTV) {
 
 @OptIn(ExperimentalNaverMapApi::class)
 @Composable
-fun MapMarker(latitude: Double?, longitude: Double?, localName: String) {
+fun MapMarker(
+    latitude: Double?,
+    longitude: Double?,
+    localName: String,
+    index: Int,
+    visible: Boolean
+) {
     if (latitude == null || longitude == null) return
     Marker(
         state = MarkerState(position = LatLng(latitude, longitude)),
-        captionText = localName
+        captionText = localName,
+        isHideCollidedMarkers = true,
+        globalZIndex = index,
+        visible = visible
     )
 }

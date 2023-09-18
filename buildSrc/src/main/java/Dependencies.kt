@@ -50,4 +50,7 @@ object Dependencies {
     const val naverMap = "com.naver.maps:map-sdk:${Versions.NAVER_MAPS}"
     const val naverMapCompose =
         "io.github.fornewid:naver-map-compose:${Versions.NAVER_MAPS_COMPOSE}"
+    const val playServiceLocation =
+        "com.google.android.gms:play-services-location:${Versions.PLAY_SERVICE_LOCATION}"
 }
+

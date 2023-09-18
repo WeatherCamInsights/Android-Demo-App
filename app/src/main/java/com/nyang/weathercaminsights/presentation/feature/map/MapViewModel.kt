@@ -21,7 +21,7 @@ class MapViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            //getInfoCCTV()
+            getInfoCCTV()
         }
     }
 
